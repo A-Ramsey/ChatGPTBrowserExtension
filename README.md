@@ -9,7 +9,7 @@ A browser extension that adds a window for a ChatGPT interface
 - Click ```Options``` on the dropdown
 - Paste API key in the box and click save
 
-### Changing the size of the box
+## Changing the size of the box
 - Go to [about:addons](about:addons)
 - Click the 3 dots on the extension
 - Click ```Options``` on the dropdown
