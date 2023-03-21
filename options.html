@@ -11,7 +11,22 @@
             <div class="input-group mb-3">
                 <span class="input-group-text">API Key</span>
                 <input type="text" id="apiKey" class="apiKey form-control" name="apiKey" />
-                <button type="submit" class="btn btn-outline-secondary">Save</button>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Width</span>
+                <input type="text" id="width" class="apiKey form-control" name="width" />
+            </div>
+            <p>Width is the width of the box that gets displayed (Default 25)</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Height</span>
+                <input type="text" id="height" class="apiKey form-control" name="height" />
+            </div>
+            <p>Height is the height of the scrollable area for messages (will have header and input box extra to this)</p>
+            <p>Height and width are both measured in rem</p>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <br>
+            <div id="optionsSavedWrapper">
+                <p id="optionsSaved">Saved</p>
             </div>
         </form>
         

@@ -8,21 +8,29 @@ function lockUnlockInput(lock = true) {
 }
 
 function onError(error) {
-    console.log("Failed to get API key");
+    console.log(error);
 
-    let errMsg = {'role': 'error', 'content': 'Failed to get API key'}
+    let errMsg = {'role': 'error', 'content': error}
 
     lockUnlockInput()
     displayMessage(errMsg);
 }
 
-function onGot(item) {
-    console.log(item)
+function onGotApiKey(item) {
     apiKey = item.apiKey;
 }
 
-const getting = webEngine.storage.sync.get("apiKey");
-getting.then(onGot, onError);
+function onGotWidth(item) {
+    console.log(item.width + "rem")
+    document.body.style.width = item.width + "rem";
+}
+
+function onGotHeight(item) {
+    document.getElementById('responses').style.height = item.height + "rem";
+}
+
+const gettingApiKey = webEngine.storage.sync.get("apiKey");
+gettingApiKey.then(onGotApiKey, onError);
 
 let messages = [
     {'role': 'system', 'content': 'You are a useful assistant'}
@@ -82,6 +90,8 @@ async function makeRequest() {
         messages.push(modelReply);
         console.log(modelReply);
         displayMessage(modelReply);
+        let elem = document.getElementById('responses');
+        elem.scrollTop = elem.scrollHeight;
         lockUnlockInput(false);
     })
 }
@@ -107,5 +117,12 @@ window.addEventListener('load', async () => {
             document.getElementById('main-inp-btn').click();
         }
     })
+
+    const gettingWidth = webEngine.storage.sync.get("width");
+    gettingWidth.then(onGotWidth, onError);
+    
+    const gettingHeight = webEngine.storage.sync.get("height");
+    gettingHeight.then(onGotHeight, onError);
+
     document.getElementById('main-inp').focus();
 })

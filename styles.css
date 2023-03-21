@@ -13,17 +13,20 @@
     padding-top: 1rem;
     border-bottom: 1px solid #444654;
     padding-bottom: 0.5rem;
+}
+
+.header h1 {
     text-align: center;
 }
 
 .responses {
-    max-height: 50rem;
-    height: 20rem;
+    height: 25rem;
     min-height: 10rem;
     overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: left;
+    padding-bottom: 0.5rem;
 }
 
 .response {
@@ -91,4 +94,17 @@
 
 .gptOptionsHeader {
     text-align: center;
+}
+
+#optionsSaved {
+    color: white;
+    margin-top: 0.8rem;
+}
+
+#optionsSavedWrapper {
+    display: none;
+    border-radius: 0.5rem;
+    background-color: green;
+    padding: 0.1rem 0.8rem;
+    margin-top: 0.3rem;
 }
