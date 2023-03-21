@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "GPT extension",
+  "description": "GPT extension",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": {"32": "icons/icon32.png", "50": "icons/icon50.png"},
+    "default_title": "GPT!",
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["index.js"]
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "gpt@aramsey.co.uk"
+    }
+  },
+  "permissions": ["storage", "clipboardWrite", "notifications"]
+}

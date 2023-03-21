@@ -1,0 +1,94 @@
+.body {
+    background-color: #343541;
+    color: #c6cad0;
+    width: 25rem;
+}
+
+.header, .main-inp-group {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.header {
+    padding-top: 1rem;
+    border-bottom: 1px solid #444654;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.responses {
+    max-height: 50rem;
+    height: 20rem;
+    min-height: 10rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.response {
+    padding: 1rem;
+    margin: 0.6rem 0.6rem 0 0.6rem;
+    max-width: 21rem;
+    width: 21rem;
+    border-radius: 0.5rem;
+}
+
+.user {
+    background-color: #343541;
+    border: 1px solid #444654;
+}
+
+.assistant {
+    background-color: #444654;
+    margin-left: auto;
+}
+
+.error {
+    background-color: #e58a92;
+}
+
+
+.main-inp-group {
+    border-top: 1px solid #444654;
+    padding-top: 0.8rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.main-inp {
+    background-color: #343541 !important;
+    border: 1px solid #c6cad0;
+    color: #c6cad0;
+}
+
+#main-inp {
+    color: #c6cad0;
+}
+
+#main-inp::placeholder {
+    color: #c6cad0;
+}
+
+.main-inp-btn {
+    background-color: #343541 !important;
+    border: 1px solid #c6cad0;
+    color: #c6cad0;
+}
+
+::placeholder {
+    opacity: 1;
+    color: #c6cad0;
+}
+
+
+.optionsBody {
+    padding: 1rem;
+    height: 100%;
+    background-color: #343541;
+    color: #c6cad0;
+}
+
+.gptOptionsHeader {
+    text-align: center;
+}
