@@ -1,19 +1,16 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "GPT Extension",
   "description": "Adding a chat box to access ChatGPT from a browser extension",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "icons": {
     "256": "icons/icon256.png"
   },
-  "browser_action": {
+  "action": {
     "browser_style": true,
     "default_icon": {"256": "icons/icon256.png"},
     "default_title": "GPT Extension!",
     "default_popup": "index.html"
-  },
-  "background": {
-    "scripts": ["index.js"]
   },
   "options_ui": {
     "page": "options.html"
