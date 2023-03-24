@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "GPT Extension",
+  "name": "GPT Browser Extension",
   "description": "Adding a chat box to access ChatGPT from a browser extension",
   "version": "1.1.0",
   "icons": {

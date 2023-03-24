@@ -49,6 +49,11 @@
 
 .error {
     background-color: #e58a92;
+    margin-left: auto;
+    margin-right: auto;
+    color: #202123;
+    text-align: center;
+    font-weight: bold;
 }
 
 

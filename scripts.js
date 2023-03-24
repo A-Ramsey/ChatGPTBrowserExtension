@@ -1,5 +1,7 @@
 let apiKey = "";
 let webEngine = browser;
+// let webEngine = chrome;
+const openAiApiKeyRegex = /^sk\-[a-zA-Z0-9]{48}$/
 
 function lockUnlockInput(lock = true) {
     document.getElementById('main-inp').disabled = lock;
@@ -28,9 +30,6 @@ function onGotWidth(item) {
 function onGotHeight(item) {
     document.getElementById('responses').style.height = item.height + "rem";
 }
-
-const gettingApiKey = webEngine.storage.sync.get("apiKey");
-gettingApiKey.then(onGotApiKey, onError);
 
 let messages = [
     {'role': 'system', 'content': 'You are a useful assistant'}
@@ -117,6 +116,16 @@ window.addEventListener('load', async () => {
             document.getElementById('main-inp-btn').click();
         }
     })
+    
+    const gettingApiKey = webEngine.storage.sync.get("apiKey");
+    gettingApiKey.then(onGotApiKey, onError).then(()=>{
+        console.log(openAiApiKeyRegex.test(apiKey));
+        console.log("api key");
+        if (!openAiApiKeyRegex.test(apiKey)) {
+            displayMessage({'role': 'error', 'content': 'Invalid API Key'});
+            lockUnlockInput();
+        }
+    });
 
     const gettingWidth = webEngine.storage.sync.get("width");
     gettingWidth.then(onGotWidth, onError);
